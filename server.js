@@ -10,6 +10,7 @@ app.get('/', (request,response) => {
     response.send('Welcome to nearby places API');
 }); 
 
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
 });
