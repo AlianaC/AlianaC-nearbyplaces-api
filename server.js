@@ -49,8 +49,8 @@ app.post('/review', (request, response) => {
     db.addReview(author, rate, rating, placeid).then(x => response.json({message: "Review successfully added."}));
 });
 
-app.post('/delete', (request, response) => {
-    let placeid = request.body.placeid;
+app.get('/delete/:placeid', (request, response) => {
+    let placeid = request.params.placeid;
     db.deletePlace(placeid).then(x => response.json({message: "Place successfully deleted."}));
 });
 

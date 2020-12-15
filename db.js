@@ -60,5 +60,5 @@ function deletePlace(placeid){
 }
     
 
-module.exports = { getPlaces, getReviews, addPlace, search, addReview };
+module.exports = { getPlaces, getReviews, addPlace, search, addReview, deletePlace };
 
