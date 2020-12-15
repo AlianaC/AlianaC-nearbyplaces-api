@@ -49,6 +49,11 @@ app.post('/review', (request, response) => {
     db.addReview(author, rate, rating, placeid).then(x => response.json({message: "Review successfully added."}));
 });
 
+app.post('/delete', (request, response) => {
+    let placeid = request.body.placeid;
+    db.deletePlace(placeid).then(x => response.json({message: "Place successfully deleted."}));
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}!`);
 });

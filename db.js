@@ -53,6 +53,11 @@ function addReview(author, rate, rating, placeid){
     let query = `INSERT INTO nearbyplaces.reviews (author, rate, rating, placeid) VALUES('${author}', ${rate}, '${rating}', ${placeid});`;
     return postgrePool.query(query).then(x => x.rows);
 }
+
+function deletePlace(placeid){
+    let query = `DELETE FROM nearbyplaces.places WHERE id=${placeid};`
+    return postgrePool.query(query).then(x => x.rows);
+}
     
 
 module.exports = { getPlaces, getReviews, addPlace, search, addReview };
