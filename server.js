@@ -24,9 +24,9 @@ app.get('/reviews/:placeid', (request, response) => {
 });
 
 app.get('/search', (request, response) => {
-    let searchTerm = request.body.searchTerm;
-    let city = request.body.city;
-    let state = request.body.state;
+    let searchTerm = request.query.searchTerm;
+    let city = request.query.city;
+    let state = request.query.state;
     db.search(searchTerm, city, state).then(x => response.json(x));
 });
 
